@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: pink; 
+            color: #ecf0f1; /* Light gray text color */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            border-radius: 10px;
+            text-align: center;
+        }
+        .emoji {
+            font-size: 4rem; /* Increased emoji size */
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+        }
+        /* Colors for positive and negative sentiments */
+        .positive {
+            color: #28a745; /* Green color for positive sentiment */
+        }
+        .negative {
+            color: #dc3545; /* Red color for negative sentiment */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if prediction == 'positive' %}
+            <div class="emoji positive">😃</div>
+            <h1 style="color: #28a745;">Positive Sentiment</h1>
+        {% elif prediction == 'negative' %}
+            <div class="emoji negative">😔</div>
+            <h1 style="color: #dc3545;">Negative Sentiment</h1>
+        {% endif %}
+        <p>The sentiment of the review is: {{ prediction }}</p>
+    </div>
+</body>
+</html>

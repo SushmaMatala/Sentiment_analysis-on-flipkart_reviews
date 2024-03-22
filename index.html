@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Sentiment Analysis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: pink;
+            color: #ecf0f1; /* Light gray text color */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            border-radius: 10px;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #34495e; /* Darker border color */
+            background-color: #34495e; /* Dark blue text area background color */
+            color: #ecf0f1; /* Light gray text color */
+        }
+        input[type="submit"] {
+            background-color: #3498db; /* Blue submit button color */
+            color: #ecf0f1; /* Light gray text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9; /* Darker blue hover color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Flipkart Sentiment Analysis</h1>
+        <form action="/predict" method="post">
+            <label for="review" style="color: #ecf0f1;">Enter your review:</label><br>
+            <textarea name="review" rows="4" cols="50" {% if not review %}placeholder="{{ message }}"{% endif %}></textarea><br><br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
